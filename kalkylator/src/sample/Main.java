@@ -6,8 +6,11 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
+import sun.security.pkcs11.wrapper.Functions;
 
 import java.awt.*;
+import java.lang.reflect.Field;
+import java.util.function.Function;
 
 public class Main extends Application {
 
@@ -20,41 +23,57 @@ public class Main extends Application {
         pane.setTop(text);
 
 
-
         Button button1 = new Button("1");
         button1.setMinSize(125, 100);
+        button1.setText("1");
         Button button2= new Button("2");
         button2.setMinSize(125, 100);
+        button2.setText("2");
         Button button3 = new Button("3");
         button3.setMinSize(125, 100);
+        button3.setText("3");
         Button button4 = new Button("4");
         button4.setMinSize(125, 100);
+        button4.setText("4");
         Button button5 = new Button("5");
         button5.setMinSize(125, 100);
+        button5.setText("5");
         Button button6 = new Button("6");
         button6.setMinSize(125, 100);
+        button6.setText("6");
         Button button7 = new Button("7");
         button7.setMinSize(125, 100);
+        button7.setText("7");
         Button button8 = new Button("8");
         button8.setMinSize(125, 100);
+        button8.setText("8");
         Button button9 = new Button("9");
         button9.setMinSize(125, 100);
+        button9.setText("9");
         Button button0 = new Button("0");
         button0.setMinSize(125, 100);
+        button0.setText("0");
         Button buttonPlus = new Button("+");
         buttonPlus.setMinSize(125, 100);
+        buttonPlus.setText("+");
         Button buttonMin = new Button("-");
         buttonMin.setMinSize(125, 100);
+        buttonMin.setText("-");
         Button buttonTimes = new Button("X");
         buttonTimes.setMinSize(125, 100);
+        buttonTimes.setText("x");
         Button buttonDivide = new Button("/");
         buttonDivide.setMinSize(125, 100);
+        buttonDivide.setText("/");
         Button buttonClear = new Button("Clear");
         buttonClear.setMinSize(500, 100);
+        buttonClear.setText("Clear");
         Button buttonDot = new Button(".");
         buttonDot.setMinSize(125, 100);
+        buttonDot.setText(".");
         Button buttonEct = new Button("=");
         buttonEct.setMinSize(125, 100);
+        buttonEct.setText("=");
 
         GridPane grid = new GridPane();
 
@@ -78,13 +97,105 @@ public class Main extends Application {
         pane.setCenter(grid);
         pane.setBottom(buttonClear);
 
-        button1.setOnAction();
 
 
         primaryStage.setTitle("Kalkylator");
         primaryStage.setScene(new Scene(pane, 490, 500));
         primaryStage.setResizable(false);
         primaryStage.show();
+
+        button1.setOnAction(event -> {
+            Controller.activeNumb += "1";
+            text.setText(Controller.activeNumb);
+        });
+
+        button2.setOnAction(event -> {
+            Controller.activeNumb += "2";
+            text.setText(Controller.activeNumb);
+        });
+
+        button3.setOnAction(event -> {
+            Controller.activeNumb += "3";
+            text.setText(Controller.activeNumb);
+        });
+
+        button4.setOnAction(event -> {
+            Controller.activeNumb += "4";
+            text.setText(Controller.activeNumb);
+        });
+
+        button5.setOnAction(event -> {
+            Controller.activeNumb += "5";
+            text.setText(Controller.activeNumb);
+        });
+
+        button6.setOnAction(event -> {
+            Controller.activeNumb += "6";
+            text.setText(Controller.activeNumb);
+        });
+
+        button7.setOnAction(event -> {
+            Controller.activeNumb += "7";
+            text.setText(Controller.activeNumb);
+        });
+
+        button8.setOnAction(event -> {
+            Controller.activeNumb += "8";
+            text.setText(Controller.activeNumb);
+        });
+
+        button9.setOnAction(event -> {
+            Controller.activeNumb += "9";
+            text.setText(Controller.activeNumb);
+        });
+
+        buttonPlus.setOnAction(event -> {
+            Controller.activeNumb += "+";
+            text.setText(Controller.activeNumb);
+        });
+
+
+        buttonMin.setOnAction(event -> {
+            Controller.activeNumb += "-";
+            text.setText(Controller.activeNumb);
+        });
+
+
+        buttonDivide.setOnAction(event -> {
+            Controller.activeNumb += "/";
+            text.setText(Controller.activeNumb);
+        });
+
+
+        buttonTimes.setOnAction(event -> {
+            Controller.activeNumb += "x";
+            text.setText(Controller.activeNumb);
+        });
+
+
+        buttonDot.setOnAction(event -> {
+            Controller.activeNumb += ".";
+            text.setText(Controller.activeNumb);
+        });
+
+        buttonClear.setOnAction(event -> {
+            Controller.activeNumb = " ";
+            text.setText(Controller.activeNumb);
+        });
+
+        button0.setOnAction(event -> {
+            Controller.activeNumb += "0";
+            text.setText(Controller.activeNumb);
+        });
+
+
+
+
+
+
+
+
+
     }
 
 

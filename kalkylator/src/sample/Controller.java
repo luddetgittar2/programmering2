@@ -1,11 +1,14 @@
 package sample;
 
+import javafx.event.ActionEvent;
+
+import java.awt.*;
+import java.util.FormatFlagsConversionMismatchException;
+
+
 public class Controller {
 
-    public void plus(){
-        
-    }
-
-
-
+    public static String activeNumb = "";
+    public static String numb = "";
+    public static double sum;
 }
