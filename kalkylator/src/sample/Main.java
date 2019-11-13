@@ -104,49 +104,51 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         primaryStage.show();
 
+        Controller Controller = new Controller();
+
         button1.setOnAction(event -> {
-            Controller.activeNumb += "1";
-            text.setText(Controller.activeNumb);
+            Controller.number("1");
+            text.setText(Controller.number);
         });
 
         button2.setOnAction(event -> {
-            Controller.activeNumb += "2";
-            text.setText(Controller.activeNumb);
+            Controller.number("2");
+            text.setText(Controller.number);
         });
 
         button3.setOnAction(event -> {
-            Controller.activeNumb += "3";
-            text.setText(Controller.activeNumb);
+            Controller.number("3");
+            text.setText(Controller.number);
         });
 
         button4.setOnAction(event -> {
-            Controller.activeNumb += "4";
-            text.setText(Controller.activeNumb);
+            Controller.number("4");
+            text.setText(Controller.number);
         });
 
         button5.setOnAction(event -> {
-            Controller.activeNumb += "5";
-            text.setText(Controller.activeNumb);
+            Controller.number("5");
+            text.setText(Controller.number);
         });
 
         button6.setOnAction(event -> {
-            Controller.activeNumb += "6";
-            text.setText(Controller.activeNumb);
+            Controller.number("6");
+            text.setText(Controller.number);
         });
 
         button7.setOnAction(event -> {
-            Controller.activeNumb += "7";
-            text.setText(Controller.activeNumb);
+            Controller.number("7");
+            text.setText(Controller.number);
         });
 
         button8.setOnAction(event -> {
-            Controller.activeNumb += "8";
-            text.setText(Controller.activeNumb);
+            Controller.number("8");
+            text.setText(Controller.number);
         });
 
         button9.setOnAction(event -> {
-            Controller.activeNumb += "9";
-            text.setText(Controller.activeNumb);
+            Controller.number("9");
+            text.setText(Controller.number);
         });
 
         buttonPlus.setOnAction(event -> {
@@ -156,26 +158,26 @@ public class Main extends Application {
 
 
         buttonMin.setOnAction(event -> {
-            Controller.activeNumb += "-";
-            text.setText(Controller.activeNumb);
+            Controller.minNumb();
+            text.setText(Controller.number);
         });
 
 
         buttonDivide.setOnAction(event -> {
-            Controller.activeNumb += "/";
-            text.setText(Controller.activeNumb);
+            Controller.devNumb();
+            text.setText(Controller.number);
         });
 
 
         buttonTimes.setOnAction(event -> {
-            Controller.activeNumb += "x";
-            text.setText(Controller.activeNumb);
+            Controller.timNumb();
+            text.setText(Controller.number);
         });
 
 
         buttonDot.setOnAction(event -> {
-            Controller.activeNumb += ".";
-            text.setText(Controller.activeNumb);
+            Controller.number += (".");
+            text.setText(Controller.number);
         });
 
         buttonClear.setOnAction(event -> {
@@ -184,8 +186,13 @@ public class Main extends Application {
         });
 
         button0.setOnAction(event -> {
-            Controller.activeNumb += "0";
-            text.setText(Controller.activeNumb);
+            Controller.number("0");
+            text.setText(Controller.number);
+        });
+
+        buttonPlus.setOnAction(event -> {
+            Controller.addNumb();
+            text.setText(Controller.number);
         });
 
 
