@@ -20,6 +20,7 @@ public class Main extends Application {
         BorderPane pane = new BorderPane();
 
         TextField text = new TextField();
+        text.setEditable(false);
         pane.setTop(text);
 
 
@@ -152,8 +153,8 @@ public class Main extends Application {
         });
 
         buttonPlus.setOnAction(event -> {
-            Controller.activeNumb += "+";
-            text.setText(Controller.activeNumb);
+            Controller.addNumb();
+            text.setText(Controller.number);
         });
 
 
@@ -176,13 +177,13 @@ public class Main extends Application {
 
 
         buttonDot.setOnAction(event -> {
-            Controller.number += (".");
+            Controller.number(".");
             text.setText(Controller.number);
         });
 
         buttonClear.setOnAction(event -> {
-            Controller.activeNumb = " ";
-            text.setText(Controller.activeNumb);
+            Controller.clear();
+            text.setText(Controller.number);
         });
 
         button0.setOnAction(event -> {
@@ -192,6 +193,11 @@ public class Main extends Application {
 
         buttonPlus.setOnAction(event -> {
             Controller.addNumb();
+            text.setText(Controller.number);
+        });
+
+        buttonEct.setOnAction(event -> {
+            Controller.ect();
             text.setText(Controller.number);
         });
 
