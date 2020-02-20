@@ -21,7 +21,7 @@ app.use(express.urlencoded())
 app.post('/form', (req, res) => {
     const name = req.body.name
     console.log(name)
-    res.redirect('/')
+    res.redirect('/luvdig.jpg')
   })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
