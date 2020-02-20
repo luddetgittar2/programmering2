@@ -13,4 +13,15 @@ app.get('/style.css', (req, res) => {
 app.get('/luvdig.jpg', (req, res) => {
   res.sendFile(__dirname+'\\luvdig.jpg')
 })
+
+app.use(express.json())
+
+app.use(express.urlencoded())
+
+app.post('/form', (req, res) => {
+    const name = req.body.name
+    console.log(name)
+    res.redirect('/')
+  })
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
